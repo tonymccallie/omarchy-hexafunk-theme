@@ -30,9 +30,11 @@ local R = {
   punct    = { fg = P.fg3 },
 }
 
--- Pink-to-teal fade for the dashboard logo, top to bottom, like the window
--- border. One highlight group per step: HexafunkHeader1..N.
-local HEADER_STEPS = 8
+-- Dashboard logo: bright teal fading to a deep teal, top to bottom (bright
+-- end on top, like the window border). Same hue throughout, so no muddy
+-- middle. One highlight group per step: HexafunkHeader1..N.
+local HEADER_STEPS = 6
+local HEADER_FROM, HEADER_TO = "#00f0d0", "#0e8a78"
 local function mix(a, b, t)
   local function ch(h, i) return tonumber(h:sub(i, i + 1), 16) end
   local out = "#"
@@ -217,9 +219,9 @@ local function syntax_overrides(hl, c)
   -- Dashboard (snacks.nvim). By default it inherits Special/Number, which
   -- are purple here, so the whole menu came out purple.
   for i = 1, HEADER_STEPS do
-    hl["HexafunkHeader" .. i] = { fg = mix(P.pink, P.teal, (i - 1) / (HEADER_STEPS - 1)) }
+    hl["HexafunkHeader" .. i] = { fg = mix(HEADER_FROM, HEADER_TO, (i - 1) / (HEADER_STEPS - 1)) }
   end
-  hl.SnacksDashboardHeader = { fg = P.pink }
+  hl.SnacksDashboardHeader = { fg = P.teal }
   hl.SnacksDashboardIcon = { fg = P.teal_dim }
   hl.SnacksDashboardDesc = { fg = P.fg1 }
   hl.SnacksDashboardKey = { fg = P.pink, bold = true }
@@ -369,7 +371,7 @@ return {
   },
   {
     -- Dashboard logo drawn line by line so each line gets its own step of
-    -- the pink-to-teal fade. Keeps LazyVim's logo, menu and startup line.
+    -- the teal fade. Keeps LazyVim's logo, menu and startup line.
     "folke/snacks.nvim",
     opts = function(_, opts)
       local dash = opts.dashboard
