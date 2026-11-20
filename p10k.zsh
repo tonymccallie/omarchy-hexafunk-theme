@@ -26,14 +26,35 @@ typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND='#bcb4a9'
 typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND='#f5f1ea'
 typeset -g POWERLEVEL9K_DIR_VISUAL_IDENTIFIER_COLOR='#d4ccc1'
 
-# git: dim shades as blocks, like teal-dim for clean. Modified yellow-dim,
-# untracked orange-dim; conflicts stay bright red (red-dim is only 4.1:1 with
-# dark text, and a conflict should be loud).
+# git: teal-dim block when clean, pink-dim block when there are changes
+# (modified, staged or untracked), bright red for conflicts. The pink-dim
+# matches the Arch icon block, so a dirty repo is framed in pink.
 typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND='#19c9b0'
-typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='#d6a22e'
-typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='#d9762a'
+typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='#c41a6e'
+typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='#c41a6e'
 typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND='#ff7370'
 typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND='#494b3f'
+
+# ~/.p10k.zsh's my_git_formatter writes its text in ANSI black/white/red
+# (%0F, %7F, %1F), which is unreadable on pink-dim. Wrap it and recolor the
+# text by state: linen on pink-dim, dark on teal-dim and red. This also fixes
+# the faint white `:` / `@` separators on the clean block.
+if (( $+functions[my_git_formatter] && ! $+functions[_hexafunk_orig_git_formatter] )); then
+  functions[_hexafunk_orig_git_formatter]=$functions[my_git_formatter]
+  function my_git_formatter() {
+    _hexafunk_orig_git_formatter "$@"
+    local text
+    if (( VCS_STATUS_NUM_CONFLICTED )); then
+      text='%F{#181915}'
+    elif (( VCS_STATUS_NUM_STAGED || VCS_STATUS_NUM_UNSTAGED || VCS_STATUS_NUM_UNTRACKED )); then
+      text='%F{#f5f1ea}'
+    else
+      text='%F{#181915}'
+    fi
+    typeset -g my_git_format=${my_git_format//\%[017]F/$text}
+  }
+  functions -M my_git_formatter 2>/dev/null
+fi
 
 # prompt char: teal-dim, red after an error (keeps pink-dim the only prompt pink)
 typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND='#19c9b0'
