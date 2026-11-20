@@ -17,12 +17,13 @@ typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_FOREGROUND='#5f6151'
 typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND='#c41a6e'
 typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND='#f5f1ea'
 
-# directory: neutral bg1 block with blue path text (paths role), like the
-# bg1 window tabs in tmux. A solid blue block clashed with the teal clock.
-typeset -g POWERLEVEL9K_DIR_BACKGROUND='#36382e'
-typeset -g POWERLEVEL9K_DIR_FOREGROUND='#3eafcc'
-typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND='#8e927c'
-typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND='#6ec3d9'
+# directory: lighter bg2 pill with linen text and a pink folder icon. Neutral
+# bridge between the pink icon block and the teal git block; no blue.
+typeset -g POWERLEVEL9K_DIR_BACKGROUND='#494b3f'
+typeset -g POWERLEVEL9K_DIR_FOREGROUND='#d4ccc1'
+typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND='#bcb4a9'
+typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND='#f5f1ea'
+typeset -g POWERLEVEL9K_DIR_VISUAL_IDENTIFIER_COLOR='#ff79bc'
 
 # git: clean/added teal-dim, modified yellow, untracked orange, conflict red
 typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND='#19c9b0'
