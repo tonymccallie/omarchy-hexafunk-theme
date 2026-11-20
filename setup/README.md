@@ -30,3 +30,15 @@ Add to `~/.zshrc` right after the line that sources `~/.p10k.zsh`:
 ```
 
 Open shells keep their old colors until `exec zsh`.
+
+## eza
+
+Add to `~/.zshrc` (anywhere):
+
+```zsh
+# eza colors from the current Omarchy theme (eza uses its defaults when the theme has none)
+export EZA_CONFIG_DIR=~/.local/state/omarchy/current/theme/eza
+```
+
+This follows theme switches live, even in open shells. It replaces
+`~/.config/eza`, so move any personal eza theme into the Omarchy theme instead.

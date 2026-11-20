@@ -24,6 +24,7 @@ linen `#f5f1ea #eee8df #d4ccc1 #bcb4a9 #a59d93`.
 | `neovim.lua` | aether.nvim plus overrides for Vim, Treesitter and LSP semantic groups, git/diagnostic colors and the lualine theme. |
 | `tmux.conf` | Powerline-style status bar. Overrides tmux-gruvbox while hexafunk is active. |
 | `p10k.zsh` | powerlevel10k (rainbow) segment and frame colors. |
+| `eza/theme.yml` | eza (`ls`/`ll`) colors: teal directories, gray dates, purple symlinks. |
 | `btop.theme` | Generated, then patched: `selected_fg` is linen (the template's pink-on-pink-dim is 2.3:1). |
 | `vscode-theme.json` | Generated, then remapped to the hexafunk syntax roles by `tools/vscode_remap.py`. |
 | `backgrounds/` | Hexagon wallpaper. |
@@ -48,12 +49,12 @@ tools/regen-generated.sh
 ```
 
 It regenerates `btop.theme` and `vscode-theme.json` from Omarchy's templates and
-re-applies the hexafunk fixes. `neovim.lua`, `tmux.conf` and `p10k.zsh` carry
+re-applies the hexafunk fixes. `neovim.lua`, `tmux.conf`, `p10k.zsh` and `eza/theme.yml` carry
 their own hex values, so update those by hand.
 
 ## If someone installs it with `omarchy theme install`
 
-They get colors.toml, btop, VS Code, tmux.conf, p10k.zsh and the wallpaper.
+They get colors.toml, btop, VS Code, tmux.conf, p10k.zsh, eza and the wallpaper.
 `neovim.lua` is dropped and regenerated from the default aether template, so the
-custom syntax roles won't come through. The tmux and p10k overlays need the
-lines from `setup/`.
+custom syntax roles won't come through. The tmux, p10k and eza overlays need
+the lines from `setup/`.
