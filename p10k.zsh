@@ -33,8 +33,8 @@ typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='#fa984c'
 typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND='#ff7370'
 typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND='#494b3f'
 
-# prompt char: pink, red after an error
-typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND='#ff79bc'
+# prompt char: teal-dim, red after an error (keeps pink-dim the only prompt pink)
+typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND='#19c9b0'
 typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND='#ff7370'
 
 # right side
