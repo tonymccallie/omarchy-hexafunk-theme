@@ -24,7 +24,7 @@ linen `#f5f1ea #eee8df #d4ccc1 #bcb4a9 #a59d93`.
 | `neovim.lua` | aether.nvim plus overrides for Vim, Treesitter and LSP semantic groups, git/diagnostic colors and the lualine theme. |
 | `tmux.conf` | Powerline-style status bar. Overrides tmux-gruvbox while hexafunk is active. |
 | `p10k.zsh` | powerlevel10k (rainbow) segment and frame colors. |
-| `eza/theme.yml` | eza (`ls`/`ll`) colors: teal directories, gray dates, purple symlinks. |
+| `eza/theme.yml` | eza (`ls`/`ll`) colors: teal-dim directories, gray dates, linen for your own user, purple symlinks. |
 | `btop.theme` | Generated, then patched: `selected_fg` is linen (the template's pink-on-pink-dim is 2.3:1). |
 | `vscode-theme.json` | Generated, then remapped to the hexafunk syntax roles by `tools/vscode_remap.py`. |
 | `backgrounds/` | Hexagon wallpaper. |

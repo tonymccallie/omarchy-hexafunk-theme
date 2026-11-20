@@ -1,11 +1,15 @@
 # hexafunk eza theme. Read via EZA_CONFIG_DIR pointing at the current Omarchy
 # theme's eza/ folder (see setup/README.md). Only overrides what differs from
-# eza's ANSI defaults: one accent per line (teal directories), quiet dates.
+# eza's ANSI defaults: one accent per line (teal-dim directories), quiet dates,
+# your own user/group in linen so only other users and root stand out.
 filekinds:
-  directory: { foreground: "#00f0d0", is_bold: true }
+  directory: { foreground: "#19c9b0", is_bold: true }
   symlink: { foreground: "#c297ed" }        # purple, so links don't read as dirs
   executable: { foreground: "#afb87a", is_bold: true }
 date: { foreground: "#8e927c" }
+users:
+  user_you: { foreground: "#d4ccc1", is_bold: false }
+  group_yours: { foreground: "#d4ccc1", is_bold: false }
 header: { foreground: "#d4ccc1", is_underline: true }
 symlink_path: { foreground: "#c297ed" }
 git:
