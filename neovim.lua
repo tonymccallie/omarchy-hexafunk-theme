@@ -157,7 +157,18 @@ local function syntax_overrides(hl, c)
   hl.CurSearch = { bg = P.teal, fg = P.bg0_h, bold = true }
   hl.Substitute = { bg = P.orange, fg = P.bg0_h }
   hl.MatchParen = { fg = P.orange, bg = P.bg2, bold = true }
-  hl.Directory = { fg = P.blue, bold = true }
+  -- Directories: teal-dim, matching eza's `ll` and the prompt (code
+  -- variables stay blue).
+  hl.Directory = { fg = P.teal_dim, bold = true }
+  hl.NeoTreeDirectoryIcon = { fg = P.teal_dim }
+  hl.NeoTreeDirectoryName = { fg = P.teal_dim }
+  hl.NeoTreeRootName = { fg = P.teal_dim, bold = true }
+  hl.NvimTreeRootFolder = { fg = P.teal_dim, bold = true }
+  hl.NvimTreeFolderIcon = { fg = P.teal_dim }
+  hl.NvimTreeFolderName = { fg = P.teal_dim }
+  hl.TelescopeResultsDirectory = { fg = P.teal_dim, bold = true }
+  hl.SnacksPickerDirectory = { fg = P.teal_dim, bold = true }
+  hl.BlinkCmpKindFolder = { fg = P.teal_dim }
   hl.Title = { fg = P.pink, bold = true }
   hl.LspReferenceText = { bg = P.bg2 }
   hl.LspReferenceRead = { bg = P.bg2 }
@@ -224,7 +235,9 @@ local function hexafunk_lualine(prev_theme)
     end
 
     return {
-      normal = mode(P.pink_dim, P.fg0, P.pink),
+      -- branch in linen next to the NORMAL block: bright pink beside pink-dim
+      -- reads as a near-miss
+      normal = mode(P.pink_dim, P.fg0, P.fg2),
       insert = mode(P.pink, P.bg0_h, P.pink),
       visual = mode(P.green, P.bg0_h, P.green),
       command = mode(P.yellow, P.bg0_h, P.yellow),
