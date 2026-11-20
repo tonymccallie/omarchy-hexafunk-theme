@@ -19,3 +19,6 @@ git:
   renamed: { foreground: "#fa984c" }
   conflicted: { foreground: "#ff7370", is_bold: true }
   ignored: { foreground: "#747864" }
+file_type:
+  source: { foreground: "#ff79bc" }                       # code files
+  build: { foreground: "#ff79bc", is_bold: true, is_underline: true }  # README, Makefile, ...
