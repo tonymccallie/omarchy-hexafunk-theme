@@ -30,6 +30,18 @@ local R = {
   punct    = { fg = P.fg3 },
 }
 
+-- Pink-to-teal fade for the dashboard logo, top to bottom, like the window
+-- border. One highlight group per step: HexafunkHeader1..N.
+local HEADER_STEPS = 8
+local function mix(a, b, t)
+  local function ch(h, i) return tonumber(h:sub(i, i + 1), 16) end
+  local out = "#"
+  for _, i in ipairs({ 2, 4, 6 }) do
+    out = out .. string.format("%02x", math.floor(ch(a, i) + (ch(b, i) - ch(a, i)) * t + 0.5))
+  end
+  return out
+end
+
 local function syntax_overrides(hl, c)
   local function set(groups, spec)
     for _, g in ipairs(groups) do
@@ -201,6 +213,21 @@ local function syntax_overrides(hl, c)
     hl[g] = vim.deepcopy(git.untracked)
   end
   hl.NeoTreeGitConflict = { fg = P.red, bold = true }
+
+  -- Dashboard (snacks.nvim). By default it inherits Special/Number, which
+  -- are purple here, so the whole menu came out purple.
+  for i = 1, HEADER_STEPS do
+    hl["HexafunkHeader" .. i] = { fg = mix(P.pink, P.teal, (i - 1) / (HEADER_STEPS - 1)) }
+  end
+  hl.SnacksDashboardHeader = { fg = P.pink }
+  hl.SnacksDashboardIcon = { fg = P.teal_dim }
+  hl.SnacksDashboardDesc = { fg = P.fg1 }
+  hl.SnacksDashboardKey = { fg = P.pink, bold = true }
+  hl.SnacksDashboardFile = { fg = P.fg1 }
+  hl.SnacksDashboardDir = { fg = P.gray }
+  hl.SnacksDashboardFooter = { fg = P.gray }
+  hl.SnacksDashboardSpecial = { fg = P.teal_dim }
+  hl.SnacksDashboardTitle = { fg = P.pink, bold = true }
 end
 
 -- Lualine. Wraps whatever theme function is already configured (Omarchy's
@@ -338,6 +365,33 @@ return {
           }
         end
       end
+    end,
+  },
+  {
+    -- Dashboard logo drawn line by line so each line gets its own step of
+    -- the pink-to-teal fade. Keeps LazyVim's logo, menu and startup line.
+    "folke/snacks.nvim",
+    opts = function(_, opts)
+      local dash = opts.dashboard
+      if not (dash and dash.preset and type(dash.preset.header) == "string") then
+        return
+      end
+      local lines = vim.split(dash.preset.header, "\n", { trimempty = true })
+      while #lines > 0 and vim.trim(lines[#lines]) == "" do
+        table.remove(lines)
+      end
+      local sections = {}
+      for i, line in ipairs(lines) do
+        local step = #lines > 1 and math.floor((i - 1) / (#lines - 1) * (HEADER_STEPS - 1) + 0.5) + 1 or 1
+        table.insert(sections, {
+          text = { { line, hl = "HexafunkHeader" .. step } },
+          align = "center",
+          padding = i == #lines and 2 or 0,
+        })
+      end
+      table.insert(sections, { section = "keys", gap = 1, padding = 1 })
+      table.insert(sections, { section = "startup" })
+      dash.sections = sections
     end,
   },
   {
