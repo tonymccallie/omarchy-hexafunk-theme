@@ -1,0 +1,54 @@
+# hexafunk: olive-gray Gruvbox base, linen text, neon pink + teal accents.
+#
+# Non-obvious choices:
+# - ANSI normal colors use the *bright* role values (#ff79bc, #3eafcc ...),
+#   not the dims. Pink, red, blue and purple dims are under 4.5:1 on bg0
+#   (pink dim is 2.8:1), and terminal programs print most text in ANSI normal.
+# - bright_* are those role colors tinted 25% toward white, so ANSI bright
+#   still reads as brighter.
+# - magenta is pink (ANSI 5) in every terminal. purple is deliberately NOT
+#   set: Omarchy aliases it to magenta, and foot's template reads purple for
+#   ANSI 5, so setting it would make foot's magenta differ from the other
+#   terminals. Purple (#c297ed) for numbers/booleans lives in neovim.lua.
+# - darker_background is bg0_h darkened 33% (#10110e). The palette has no
+#   step below bg0_h.
+# - brown is orange-dim mixed 45% into bg0: a muted Gruvbox-style brown, used
+#   only as a fill.
+
+mode = "dark"
+
+accent = "#ff79bc"
+selection = "#c41a6e"
+selection_background = "#c41a6e"
+selection_foreground = "#f5f1ea"
+muted = "#8e927c"
+
+background = "#23241e"
+dark_background = "#181915"
+darker_background = "#10110e"
+lighter_background = "#36382e"
+
+foreground = "#eee8df"
+bright_foreground = "#f5f1ea"
+light_foreground = "#d4ccc1"
+dark_foreground = "#747864"
+
+red = "#ff7370"
+yellow = "#fbc956"
+orange = "#fa984c"
+green = "#afb87a"
+cyan = "#00f0d0"
+blue = "#3eafcc"
+magenta = "#ff79bc"
+brown = "#875125"
+
+bright_red = "#ff9694"
+bright_yellow = "#fcd680"
+bright_green = "#c3ca9b"
+bright_cyan = "#40f4dc"
+bright_blue = "#6ec3d9"
+bright_magenta = "#ff9acd"
+
+# Window borders: neon teal (top) to pink (bottom) when focused, bg2 when not.
+hyprland_active_border = "rgba(00f0d0ee) rgba(ff79bcee) 90deg"
+hyprland_inactive_border = "rgba(494b3faa)"

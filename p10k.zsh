@@ -1,0 +1,61 @@
+# hexafunk colors for powerlevel10k (rainbow style). Sourced after ~/.p10k.zsh
+# while hexafunk is the current Omarchy theme. ~/.p10k.zsh mixes ANSI 0-15
+# (which follow the terminal theme) with fixed xterm-256 colors such as 238,
+# 254 and 76 (which never change). This replaces the segment and frame colors
+# with exact hexafunk hex values.
+
+# frame and gap: bg3
+typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX='%F{#5f6151}╭─'
+typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_PREFIX='%F{#5f6151}├─'
+typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX='%F{#5f6151}╰─'
+typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_SUFFIX='%F{#5f6151}─╮'
+typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_SUFFIX='%F{#5f6151}─┤'
+typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_SUFFIX='%F{#5f6151}─╯'
+typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_FOREGROUND='#5f6151'
+
+# os icon: the pink-dim "NORMAL" block
+typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND='#c41a6e'
+typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND='#f5f1ea'
+
+# directory: neutral bg1 block with blue path text (paths role), like the
+# bg1 window tabs in tmux. A solid blue block clashed with the teal clock.
+typeset -g POWERLEVEL9K_DIR_BACKGROUND='#36382e'
+typeset -g POWERLEVEL9K_DIR_FOREGROUND='#3eafcc'
+typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND='#8e927c'
+typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND='#6ec3d9'
+
+# git: clean/added teal-dim, modified yellow, untracked orange, conflict red
+typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND='#19c9b0'
+typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='#fbc956'
+typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='#fa984c'
+typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND='#ff7370'
+typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND='#494b3f'
+
+# prompt char: pink, red after an error
+typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND='#ff79bc'
+typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND='#ff7370'
+
+# right side
+typeset -g POWERLEVEL9K_STATUS_OK_FOREGROUND='#00f0d0'
+typeset -g POWERLEVEL9K_STATUS_OK_BACKGROUND='#36382e'
+typeset -g POWERLEVEL9K_STATUS_OK_PIPE_FOREGROUND='#00f0d0'
+typeset -g POWERLEVEL9K_STATUS_OK_PIPE_BACKGROUND='#36382e'
+typeset -g POWERLEVEL9K_STATUS_ERROR_FOREGROUND='#181915'
+typeset -g POWERLEVEL9K_STATUS_ERROR_BACKGROUND='#ff7370'
+typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL_FOREGROUND='#181915'
+typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL_BACKGROUND='#ff7370'
+typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_FOREGROUND='#181915'
+typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_BACKGROUND='#ff7370'
+typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='#181915'
+typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='#fbc956'
+typeset -g POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND='#00f0d0'
+typeset -g POWERLEVEL9K_BACKGROUND_JOBS_BACKGROUND='#36382e'
+typeset -g POWERLEVEL9K_CONTEXT_FOREGROUND='#fbc956'
+typeset -g POWERLEVEL9K_CONTEXT_BACKGROUND='#36382e'
+typeset -g POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND='#ff7370'
+typeset -g POWERLEVEL9K_CONTEXT_ROOT_BACKGROUND='#36382e'
+typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_FOREGROUND='#fbc956'
+typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_BACKGROUND='#36382e'
+# clock: the teal-dim position block, same as Neovim and tmux
+typeset -g POWERLEVEL9K_TIME_FOREGROUND='#181915'
+typeset -g POWERLEVEL9K_TIME_BACKGROUND='#19c9b0'

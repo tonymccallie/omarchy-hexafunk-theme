@@ -1,0 +1,15 @@
+#!/bin/bash
+# Re-theme running tmux servers after an Omarchy theme switch.
+# A theme that ships tmux.conf (e.g. hexafunk) gets it applied on top.
+# Any other theme re-sources the full config, so tpm puts back the
+# tmux-gruvbox status bar.
+
+tmux list-sessions >/dev/null 2>&1 || exit 0
+
+theme_tmux="$HOME/.local/state/omarchy/current/theme/tmux.conf"
+
+if [[ -f $theme_tmux ]]; then
+  tmux source-file "$theme_tmux"
+else
+  tmux source-file "$HOME/.config/tmux/tmux.conf"
+fi
