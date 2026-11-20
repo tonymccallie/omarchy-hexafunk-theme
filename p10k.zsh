@@ -26,10 +26,12 @@ typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND='#bcb4a9'
 typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND='#f5f1ea'
 typeset -g POWERLEVEL9K_DIR_VISUAL_IDENTIFIER_COLOR='#d4ccc1'
 
-# git: clean/added teal-dim, modified yellow, untracked orange, conflict red
+# git: dim shades as blocks, like teal-dim for clean. Modified yellow-dim,
+# untracked orange-dim; conflicts stay bright red (red-dim is only 4.1:1 with
+# dark text, and a conflict should be loud).
 typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND='#19c9b0'
-typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='#fbc956'
-typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='#fa984c'
+typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='#d6a22e'
+typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='#d9762a'
 typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND='#ff7370'
 typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND='#494b3f'
 
