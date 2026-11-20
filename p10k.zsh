@@ -17,13 +17,14 @@ typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_FOREGROUND='#5f6151'
 typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND='#c41a6e'
 typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND='#f5f1ea'
 
-# directory: lighter bg2 pill with linen text and a pink folder icon. Neutral
-# bridge between the pink icon block and the teal git block; no blue.
+# directory: lighter bg2 pill, linen text and linen folder icon. Neutral
+# bridge between the pink-dim icon block and the teal git block; no blue,
+# and pink-dim stays the only pink in the prompt.
 typeset -g POWERLEVEL9K_DIR_BACKGROUND='#494b3f'
 typeset -g POWERLEVEL9K_DIR_FOREGROUND='#d4ccc1'
 typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND='#bcb4a9'
 typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND='#f5f1ea'
-typeset -g POWERLEVEL9K_DIR_VISUAL_IDENTIFIER_COLOR='#ff79bc'
+typeset -g POWERLEVEL9K_DIR_VISUAL_IDENTIFIER_COLOR='#d4ccc1'
 
 # git: clean/added teal-dim, modified yellow, untracked orange, conflict red
 typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND='#19c9b0'
