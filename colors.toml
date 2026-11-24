@@ -14,10 +14,12 @@
 #   step below bg0_h.
 # - brown is orange-dim mixed 45% into bg0: a muted Gruvbox-style brown, used
 #   only as a fill.
+# - accent is teal, not pink, so the shell's volume/brightness OSD (which
+#   hardcodes the accent) is teal. Selection stays pink-dim.
 
 mode = "dark"
 
-accent = "#ff79bc"
+accent = "#00f0d0"
 selection = "#c41a6e"
 selection_background = "#c41a6e"
 selection_foreground = "#f5f1ea"
@@ -49,6 +51,6 @@ bright_cyan = "#40f4dc"
 bright_blue = "#6ec3d9"
 bright_magenta = "#ff9acd"
 
-# Window borders: neon teal (top) to pink (bottom) when focused, bg2 when not.
-hyprland_active_border = "rgba(00f0d0ee) rgba(ff79bcee) 90deg"
+# Window borders: neon teal to pink on a 60deg diagonal when focused, bg2 when not.
+hyprland_active_border = "rgba(00f0d0ee) rgba(ff79bcee) 60deg"
 hyprland_inactive_border = "rgba(494b3faa)"

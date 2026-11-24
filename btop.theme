@@ -8,7 +8,7 @@ theme[main_fg]="#eee8df"
 theme[title]="#eee8df"
 
 # Highlight color for keyboard shortcuts
-theme[hi_fg]="#ff79bc"
+theme[hi_fg]="#00f0d0"
 
 # Background color of selected item in processes box
 theme[selected_bg]="#c41a6e"
@@ -32,7 +32,7 @@ theme[proc_misc]="#d4ccc1"
 theme[cpu_box]="#ff79bc"
 theme[mem_box]="#afb87a"
 theme[net_box]="#ff7370"
-theme[proc_box]="#ff79bc"
+theme[proc_box]="#00f0d0"
 
 # Box divider line and small boxes line color
 theme[div_line]="#8e927c"
