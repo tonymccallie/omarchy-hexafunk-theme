@@ -5,8 +5,9 @@ when the current theme doesn't ship the matching file, so other themes are unaff
 
 ## tmux
 
-Add to the end of `~/.tmux.conf`, **after** the tpm `run` line so it wins over
-tmux-gruvbox:
+Add to `~/.tmux.conf` right **after** the tpm `run` line so it wins over
+tmux-gruvbox (and before anything that patches window formats, so the patches
+apply to hexafunk's):
 
 ```tmux
 # Omarchy theme override for tmux (after tpm so it wins over tmux-gruvbox).
