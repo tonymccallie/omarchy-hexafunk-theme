@@ -27,7 +27,8 @@ linen `#f5f1ea #eee8df #d4ccc1 #bcb4a9 #a59d93`.
 | `eza/theme.yml` | eza (`ls`/`ll`) colors: teal-dim directories, gray dates, linen for your own user, pink source and build files, purple symlinks. |
 | `btop.theme` | Generated, then patched: `selected_fg` is linen (the template's pink-on-pink-dim is 2.3:1). |
 | `vscode-theme.json` | Generated, then remapped to the hexafunk syntax roles by `tools/vscode_remap.py`. |
-| `backgrounds/` | Hexagon wallpaper. |
+| `backgrounds/` | Sky islands (default, first alphabetically), sky citadel, hex cascade, hex floor (all Midjourney), then the original hexagon wallpaper. |
+| `reference/` | Palette images used as Midjourney `--sref` style references. |
 
 ## Install (this machine)
 
@@ -36,7 +37,7 @@ The theme folder must be a **symlink** to this repo, not a clone in place.
 stranger and drops every `.lua` file (including `neovim.lua`).
 
 ```bash
-ln -s ~/code/omarchy-hexafunk-theme ~/.config/omarchy/themes/hexafunk
+ln -s ~/code/personal/omarchy-hexafunk-theme ~/.config/omarchy/themes/hexafunk
 omarchy theme set hexafunk
 ```
 
